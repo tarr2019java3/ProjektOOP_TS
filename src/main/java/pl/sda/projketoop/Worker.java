@@ -115,6 +115,25 @@ public class Worker {
         System.out.println(getName().toUpperCase()+" "+getLastname().toUpperCase());
     }
 
+    public boolean wageIsBigger(float wagex){
+        if(wagex>this.getWage()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public float rise(int x){
+        x = x + this.getBaby()*2;
+        if(this.isStan()){
+            x = x + 3;
+        }
+        return x;
+
+
+    }
+
 
 }
 
