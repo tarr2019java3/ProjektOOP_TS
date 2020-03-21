@@ -87,5 +87,24 @@ public class Worker {
     public void setStan(boolean stan) {
         this.stan = stan;
     }
+
+    public void printInfo(){
+        System.out.println("Imię: "+getName());
+        System.out.println("Nazwisko: "+getLastname());
+        System.out.println("Wiek: "+getAge());
+        System.out.println("Płeć: "+getSex());
+        System.out.println("Numer działu: "+getNr_dzial());
+        System.out.println("Ilość dzieci: "+getBaby());
+        System.out.println("Zarobki: "+getWage());
+        if(this.isStan()) {
+            System.out.println("Stan cywilny: X ");
+        }
+        else{
+            System.out.println("Stan cywilny: Wolny/Wolna" );
+        }
+
+    }
+
+
 }
 
