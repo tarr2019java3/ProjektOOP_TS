@@ -105,6 +105,16 @@ public class Worker {
 
     }
 
+    public void printBasicInfo(){
+        System.out.println("Imię: "+getName());
+        System.out.println("Nazwisko: "+getLastname());
+        System.out.println("Zarobki: "+getWage());
+    }
+
+    public void printSpecialInfo(){
+        System.out.println(getName().toUpperCase()+" "+getLastname().toUpperCase());
+    }
+
 
 }
 
