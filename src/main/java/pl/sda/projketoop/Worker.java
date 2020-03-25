@@ -88,45 +88,43 @@ public class Worker {
         this.stan = stan;
     }
 
-    public void printInfo(){
-        System.out.println("Imię: "+getName());
-        System.out.println("Nazwisko: "+getLastname());
-        System.out.println("Wiek: "+getAge());
-        System.out.println("Płeć: "+getSex());
-        System.out.println("Numer działu: "+getNr_dzial());
-        System.out.println("Ilość dzieci: "+getBaby());
-        System.out.println("Zarobki: "+getWage());
-        if(this.isStan()) {
+    public void printInfo() {
+        System.out.println("Imię: " + getName());
+        System.out.println("Nazwisko: " + getLastname());
+        System.out.println("Wiek: " + getAge());
+        System.out.println("Płeć: " + getSex());
+        System.out.println("Numer działu: " + getNr_dzial());
+        System.out.println("Ilość dzieci: " + getBaby());
+        System.out.println("Zarobki: " + getWage());
+        if (this.isStan()) {
             System.out.println("Stan cywilny: X ");
+        } else {
+            System.out.println("Stan cywilny: Wolny/Wolna");
         }
-        else{
-            System.out.println("Stan cywilny: Wolny/Wolna" );
-        }
 
     }
 
-    public void printBasicInfo(){
-        System.out.println("Imię: "+getName());
-        System.out.println("Nazwisko: "+getLastname());
-        System.out.println("Zarobki: "+getWage());
+    public void printBasicInfo() {
+        System.out.println("Imię: " + getName());
+        System.out.println("Nazwisko: " + getLastname());
+        System.out.println("Zarobki: " + getWage());
     }
 
-    public void printSpecialInfo(){
-        System.out.println(getName().toUpperCase()+" "+getLastname().toUpperCase());
+    public void printSpecialInfo() {
+        System.out.println(getName().toUpperCase() + " " + getLastname().toUpperCase());
     }
 
-    public boolean wageIsBigger(float wagex){
-        if(wagex>this.getWage()){
+    public boolean wageIsBigger(float wagex) {
+        if (wagex > this.getWage()) {
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }
 
-    public float rise(int x){
-        x = x + this.getBaby()*2;
-        if(this.isStan()){
+    public float rise(int x) {
+        x = x + this.getBaby() * 2;
+        if (this.isStan()) {
             x = x + 3;
         }
         return x;

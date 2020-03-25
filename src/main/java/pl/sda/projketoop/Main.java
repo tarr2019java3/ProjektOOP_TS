@@ -29,9 +29,8 @@ public class Main {
             menu = in.nextInt();
 
             switch (menu) {
-                case 0:
-                {
-                    xyz =1;
+                case 0: {
+                    xyz = 1;
                     break;
                 }
                 case 1: {
@@ -79,7 +78,7 @@ public class Main {
             }
 
         }
-        while(xyz==0);
+        while (xyz == 0);
 
     }
 
@@ -96,6 +95,6 @@ public class Main {
     }
         System.out.println("Procent podwyżki: "+worker1.rise(10));
     */
-    }
+}
     
 
