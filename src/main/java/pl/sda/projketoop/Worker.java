@@ -4,17 +4,17 @@ public class Worker {
     private String name;
     private String lastname;
     private int age;
-    private char sex;
+    private Sex sex;
     private int nr_dzial;
     private float wage;
     private int baby;
-    private boolean stan;
+    private Marry stan;
 
-    public Worker(String name, String lastname, int age, char sex, int nr_dzial, float wage, int baby, boolean stan) {
+    public Worker(String name, String lastname, int age, Sex sex, int nr_dzial, float wage, int baby, Marry stan) {
         this.name = name;
         this.lastname = lastname;
         this.age = age;
-        this.sex = sex;
+        this.sex= sex;
         this.nr_dzial = nr_dzial;
         this.wage = wage;
         this.baby = baby;
@@ -48,11 +48,11 @@ public class Worker {
         this.age = age;
     }
 
-    public char getSex() {
+    public Sex getSex() {
         return sex;
     }
 
-    public void setSex(char sex) {
+    public void setSex(Sex sex) {
         this.sex = sex;
     }
 
@@ -80,11 +80,24 @@ public class Worker {
         this.baby = baby;
     }
 
+    public Marry getStan(){return stan;}
+
     public boolean isStan() {
-        return stan;
+        switch(this.stan){
+            case YES:
+            {
+                return true;
+            }
+            case NO:
+            {
+                return  false;
+            }
+            default: return false;
+        }
+
     }
 
-    public void setStan(boolean stan) {
+    public void setStan(Marry stan) {
         this.stan = stan;
     }
 

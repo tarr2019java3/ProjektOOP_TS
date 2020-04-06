@@ -1,18 +1,14 @@
 package pl.sda.projketoop;
 
-import javax.swing.*;
-import java.lang.invoke.SwitchPoint;
-import java.lang.reflect.Array;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        Worker worker1 = new Worker("Tomasz", "Dupa", 22, 'M', 1, 10000.00F, 2, true);
-        Worker worker2 = new Worker("Damian", "Wąsik", 18, 'M', 2, 200.00F, 0, false);
-        Worker worker3 = new Worker("Kamil", "Zdun", 18, 'M', 2, 200.00F, 0, false);
+        Worker worker1 = new Worker("Tomasz", "Dupa", 22, Sex.M, 1, 10000.00F, 2, Marry.YES);
+        Worker worker2 = new Worker("Damian", "Wąsik", 18, Sex.K, 2, 200.00F, 0, Marry.NO);
+        Worker worker3 = new Worker("Kamil", "Zdun", 18, Sex.M, 2, 200.00F, 0, Marry.NO);
         ArrayList<Worker> workerArrayList = new ArrayList<Worker>();
         workerArrayList.add(worker1);
         workerArrayList.add(worker2);
@@ -25,7 +21,8 @@ public class Main {
             System.out.println("Opcje:");
             System.out.println("0 - koniec programu");
             System.out.println("1 - wypisz pracowników");
-            System.out.println("2-Dodaj nowego pracownika");
+            System.out.println("2 - Dodaj nowego pracownika");
+            System.out.println("3 - Eksportuj liste pracowników do pliku");
             menu = in.nextInt();
 
             switch (menu) {
@@ -45,35 +42,43 @@ public class Main {
                     String name;
                     String lastname;
                     int age;
-                    char sex;
+                    Sex sex;
                     int nr_dzial;
                     float wage;
                     int baby;
-                    boolean marry = false;
+                    Marry marry;
                     System.out.println("Podaj Imie:");
                     name = newWorker.nextLine();
                     System.out.println("Podaj Nazwisko");
                     lastname = newWorker.nextLine();
                     System.out.println("Podaj wiek pracownika");
                     age = newWorker.nextInt();
-                    System.out.println("Podaj płeć pracownika");
-                    sex = newWorker.next().charAt(0);
+                    System.out.println("Podaj płeć pracownika: 1 - M 0 - K");
+
+                    if(0==newWorker.nextInt()){
+                        sex = Sex.K;
+                    }
+                    else{
+                        sex = Sex.M;
+                    }
                     System.out.println("Podaj numer działu");
                     nr_dzial = newWorker.nextInt();
                     System.out.println("Podaj pensje");
                     wage = newWorker.nextFloat();
                     System.out.println("Pdoaj ilość dzieci pracownika");
                     baby = newWorker.nextInt();
-                    System.out.println("Jesli pracownik jest w zwiazku malzenskim 1 jesli cos innego");
-                    if (1 == newWorker.nextInt()) {
-                        marry = true;
-                    } else {
-                        marry = false;
-                    }
+                    System.out.println("Marry? YES/NO");
+                    marry = Marry.valueOf(newWorker.next().toUpperCase());
+
                     workerArrayList.add(new Worker(name, lastname, age, sex, nr_dzial, wage, baby, marry));
 
 
                     break;
+                }
+
+                case 3:{
+
+
                 }
             }
 
